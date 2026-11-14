@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#090c14">
+    <meta
+      name="description"
+      content="Descubra a imagem astronômica do dia da NASA e explore o cosmos."
+    >
+    <title>Diário do Cosmos — NASA APOD</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Diário do Cosmos, início">
+        <span class="brand-mark" aria-hidden="true">✳</span>
+        <span>DIÁRIO <span class="brand-light">DO COSMOS</span></span>
+      </a>
+      <a class="nasa-link" href="https://apod.nasa.gov/apod/astropix.html" target="_blank" rel="noreferrer">
+        <span class="live-dot" aria-hidden="true"></span>
+        EXPLORANDO O UNIVERSO COM A NASA
+        <span aria-hidden="true">↗</span>
+      </a>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow"><span class="eyebrow-line"></span> UM NOVO OLHAR, TODOS OS DIAS</p>
+        <h1 id="page-title">O universo <span>em foco.</span></h1>
+        <p class="intro-copy">
+          Uma imagem, uma história, um universo inteiro para descobrir.
+          Explore a seleção diária dos astrônomos da NASA.
+        </p>
+      </section>
+
+      <section class="explorer" aria-label="Imagem astronômica do dia">
+        <div class="media-column">
+          <div class="media-frame" id="media-frame" aria-live="polite">
+            <div class="loading-state" id="loading-state">
+              <span class="loader" aria-hidden="true"></span>
+              <span>Buscando no universo...</span>
+            </div>
+          </div>
+          <div class="media-caption">
+            <span class="caption-dot" aria-hidden="true"></span>
+            <span id="media-caption">IMAGEM ASTRONÔMICA DO DIA</span>
+            <a id="media-open" class="media-open" href="#" target="_blank" rel="noreferrer" hidden>
+              ABRIR MÍDIA <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <aside class="story-panel" aria-label="Detalhes da publicação">
+          <div class="date-row">
+            <span class="date-icon" aria-hidden="true">◷</span>
+            <time id="apod-date"></time>
+            <span class="date-label">EDIÇÃO DIÁRIA</span>
+          </div>
+          <h2 id="apod-title">Preparando sua viagem...</h2>
+          <p id="apod-copyright" class="credit" hidden></p>
+          <div class="divider"></div>
+          <h3 class="section-label">A HISTÓRIA POR TRÁS DA IMAGEM</h3>
+          <p id="apod-explanation" class="explanation">
+            Cada dia revela um novo detalhe do nosso universo.
+          </p>
+
+          <div class="divider controls-divider"></div>
+          <form id="date-form" class="date-controls">
+            <label for="date-picker">ESCOLHA UMA DATA</label>
+            <div class="date-input-wrap">
+              <input id="date-picker" name="date" type="date" required>
+              <button class="go-button" type="submit" aria-label="Buscar data selecionada">IR <span aria-hidden="true">→</span></button>
+            </div>
+          </form>
+          <div class="day-navigation">
+            <button id="previous-day" class="nav-button" type="button">
+              <span aria-hidden="true">←</span> DIA ANTERIOR
+            </button>
+            <button id="next-day" class="nav-button" type="button">
+              PRÓXIMO DIA <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </aside>
+      </section>
+
+      <section class="key-bar" aria-label="Configuração da chave da NASA">
+        <div class="key-copy">
+          <span class="key-icon" aria-hidden="true">✓</span>
+          <p>
+            <strong>Chave protegida no servidor.</strong>
+            Configure <code>NASA_API_KEY</code> ao iniciar a aplicação. Ela nunca é enviada ao navegador.
+          </p>
+        </div>
+      </section>
+      <p class="key-note">
+        Gere uma chave gratuita em
+        <a href="https://api.nasa.gov/" target="_blank" rel="noreferrer">api.nasa.gov ↗</a>
+        e defina-a no ambiente do servidor, nunca no código-fonte.
+      </p>
+      <p id="status-message" class="status-message" role="status" aria-live="polite"></p>
+    </main>
+
+    <footer class="footer">
+      <span>FEITO PARA QUEM OLHA PARA CIMA <span aria-hidden="true">✳</span></span>
+      <span>DADOS E MÍDIA: <a href="https://api.nasa.gov/" target="_blank" rel="noreferrer">NASA APOD API</a></span>
+    </footer>
+  </body>
+</html>
